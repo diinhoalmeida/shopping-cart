@@ -31,15 +31,13 @@ export const ShoppingCartProvider = ({ children }: ShoppingCartProviderProps) =>
 
     const increaseCartQuantity = (id: number) => {
         setCartItems((currItems): any => {
-            if (currItems.find(item => item.id === id) == null) {
-                return {...currItems, quantity: 1};
+            if (currItems.find(item => item.id === id) === undefined) {
+                return [...currItems, {id, quantity: 1}];
             } else {
                 return currItems.map(item => {
                     if (item.id === id) {
                         return {...item, quantity: item.quantity + 1}
-                    } else {
-                        return item
-                    }
+                    } 
                 })
             }
         })
@@ -47,7 +45,7 @@ export const ShoppingCartProvider = ({ children }: ShoppingCartProviderProps) =>
 
     const decreaseCartQuantity = (id: number) => {
         setCartItems((currItems): any => {
-            if (currItems.find(item => item.id === id) == null) {
+            if (currItems.find(item => item.id === id) === undefined) {
                 return currItems.filter(item => item.id !== id);
             } else {
                 return currItems.map(item => {

@@ -18,7 +18,8 @@ const StoreItem = ({ id, name, price, imgUrl }: StoreItemProps) => {
         removeFromCart 
     } = useShoppingCart();
 
-    const quantity = 0;
+    const quantity = getItemQuantity(id);
+    console.log(quantity);
 
     return (
         <Card className="h-100">
@@ -34,7 +35,7 @@ const StoreItem = ({ id, name, price, imgUrl }: StoreItemProps) => {
                     <span className="ms-2 text-muted">{FormatCurrency(price)}</span>
                 </Card.Title>
                 <div className="mt-auto">
-                    {quantity !== 0 ? 
+                    {quantity === 0 ? 
                         (
                             <Button className="w-100" onClick={() => increaseCartQuantity(id)}>+ Add To Cart</Button>
                         )
