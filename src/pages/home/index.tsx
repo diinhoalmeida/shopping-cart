@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div className="d-flex justify-content-center align-items-center">
             <Link to={"/store"}>
-                <Button type="button" className="btn btn-primary">Go to Store</Button>
+                <Button type="button" className="btn btn-primary">Go to Store!</Button>
             </Link>
         </div>
     )
