@@ -3,7 +3,9 @@ import './index.css';
 
 const About = () => {
     return (
-        <div>E aí, About!</div>
+        <div className="d-flex justify-content-center align-items-center">
+            <div>Created by Edilson Almeida.</div>
+        </div>
     )
 }
 
