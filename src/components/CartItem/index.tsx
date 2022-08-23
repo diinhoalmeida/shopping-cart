@@ -11,7 +11,7 @@ type CarItemsProps = {
 
 const CartItem = ({id, quantity}: CarItemsProps) => {
     const { removeFromCart } = useShoppingCart();
-    const item = storeItems.find(i => i.id === id);
+    const item: any = storeItems.find(i => i.id === id);
 
     if (item === null) return null;
 
@@ -31,8 +31,8 @@ const CartItem = ({id, quantity}: CarItemsProps) => {
                         {FormatCurrency(item?.price)}
                 </div>
             </div>
-            <> {FormatCurrency(item?.price * quantity)} </>
-            <Button variant="outline-danger" size="sm" onClick={() => removeFromCart(item?.id)}>&times;</Button>
+            <> {FormatCurrency(item.price * quantity)} </>
+            <Button variant="outline-danger" size="sm" onClick={() => removeFromCart(item.id)}>&times;</Button>
         </Stack>
     )
 }
