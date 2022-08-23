@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Video Card",
+        "price": 109.99,
+        "imgUrl": "/imgs/video-card.jpeg"
+    },
+    {
+        "id": 2,
+        "name": "Cooler",
+        "price": 50.99,
+        "imgUrl": "/imgs/cooler.jpeg"
+    },
+    {
+        "id": 3,
+        "name": "Monitor",
+        "price": 109.99,
+        "imgUrl": "/imgs/monitor.jpeg"
+    },
+    {
+        "id": 4,
+        "name": "Processor",
+        "price": 109.99,
+        "imgUrl": "/imgs/processor.jpeg"
+    },
+    {
+        "id": 5,
+        "name": "Cabinet",
+        "price": 109.99,
+        "imgUrl": "/imgs/cabinet.jpeg"
+    }
+]
