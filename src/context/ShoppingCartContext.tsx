@@ -1,5 +1,6 @@
 import React, { useContext, createContext, ReactNode, useState } from "react"
 import ShoppingCart from "../components/ShoppingCart/shopping-cart"
+import { useLocalStorage } from "../hooks/useLocalStorage"
 
 type ShoppingCartProviderProps = {
     children: ReactNode
@@ -27,14 +28,12 @@ export const useShoppingCart = () => {
 }
 
 export const ShoppingCartProvider = ({ children }: ShoppingCartProviderProps) => {
-    const [cartItems, setCartItems] = useState<CartItem[]>([]);
+    const [cartItems, setCartItems] = useLocalStorage<CartItem[]>("shopping-cart", []);
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const cartQuantity = cartItems.length;
 
     const getItemQuantity = (id: number) => {
-        console.log(cartItems);
-        console.log(id);
         return cartItems?.find(item => item?.id === id)?.quantity || 0;
     }
 
